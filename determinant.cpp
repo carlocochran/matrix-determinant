@@ -33,7 +33,7 @@ class Determinant{
 
         static int* new_matrix(int size, int index, int *m){
             int new_size = size - 1;
-            int *new_matrix = (int *)malloc(new_size * new_size * sizeof(int));
+            int *new_matrix = (int *)malloc(size * size * sizeof(int));
             for (int i=0; i < size; i++){
                 for (int j=0; j < size; j++){
                     int x = i + 1;
@@ -83,17 +83,10 @@ class Determinant{
 
 int main(){
     //int matrix[2][2] = {{3,1},{3,4}};
-    //Determinant d(matrix);
-    //std::cout << d.computeDeterminant() << std::endl;
-
     //int matrix[3][3] = {{3,-4,2},{1,10,9},{-5,6,7}};
-    //Determinant d(&matrix[0][0], 2);
-    //std::cout << d.compute_determinant_ptr() << std::endl;
-
     int matrix[4][4] = {{3,-4,2,5},{1,10,9,2},{-5,6,7,9},{1,3,4,8}};
 
     try{
-        //Determinant::print_matrix(&matrix[0][0], 3);
         std::cout << Determinant::matrix_determinant(&matrix[0][0], 4) << std::endl;
     }
     catch (DeterminantException *ex) {
